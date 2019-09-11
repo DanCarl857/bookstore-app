@@ -3,3 +3,21 @@ body {
   font-family: "Lato";
   font-size: 13px;
 }
+
+.box {
+  margin: 70px auto;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 5px 5px 5px #ddd;
+  font-family: 'Lato';
+}
+
+.box a {
+  color: #fff;
+}
+
+.box a:hover {
+  color: #fff;
+  cursor: pointer;
+}

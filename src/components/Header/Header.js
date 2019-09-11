@@ -3,11 +3,12 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavLink
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 const Header = () => {
     const [open, setOpen] = useState(false);
@@ -18,15 +19,15 @@ const Header = () => {
 
     return (
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Bookstore App</NavbarBrand>
+          <Link to="/">Bookstore App</Link>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={open} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="https://github.com/DanCarl857/bookstore-app">Documentation</NavLink>
+                <NavLink target="_blank" href="https://github.com/DanCarl857/bookstore-app">Documentation</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/DanCarl857/bookstore-app">GitHub</NavLink>
+                <NavLink target="_blank" href="https://github.com/DanCarl857/bookstore-app">GitHub</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
@@ -34,4 +35,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default withRouter(Header);

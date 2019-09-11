@@ -1,12 +1,7 @@
-.box {
-    margin: 70px auto;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 40px;
-    box-shadow: 5px 5px 5px #ddd;
-    font-family: 'Lato';
-}
-
 .table .check {
     text-align: center;
+}
+
+.table .icon {
+    color: #252525;
 }

@@ -2,13 +2,14 @@ import React from 'react';
 import { graphql } from 'react-apollo';
 import { getAllBooksQuery } from './../../queries/queries';
 import { Table, Input, Row, Col, Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import './BookList.css';
 
 const BookList = ({ data }) => {
 
     const displayBooks = () => {
         if (data.loading) {
-            return (<div>Getting books...</div>);
+            return (<>Getting books...</>);
         } else {
             return data.books.map(book => {
                 return (
@@ -19,8 +20,8 @@ const BookList = ({ data }) => {
                         <td>{book.bookId}</td>
                         <td>{book.title}</td>
                         <td>{book.author}</td>
-                        <td>$ {book.price}</td>
-                        <td><i class="icon ion-md-create"></i></td>
+                        <td>${book.price}</td>
+                        <td><Link to={`/edit/${book.bookId}`} params={{ bookId: book.bookId }}><i className="icon ion-md-create"></i></Link></td>
                     </tr>
                 )
             })
@@ -34,7 +35,9 @@ const BookList = ({ data }) => {
                     <h3>Dashboard</h3>
                 </Col>
                 <Col xs="12" md="6">
-                    <Button color="success" size="sm" className="float-right">Create New Book</Button>
+                    <Button color="success" size="sm" className="float-right">
+                        <Link to="/create-book">Create New Book</Link>
+                    </Button>
                 </Col>
             </Row>
             <Table striped>

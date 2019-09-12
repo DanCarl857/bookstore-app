@@ -60,7 +60,7 @@ const EditBook = ({ getBookQuery, editBookMutation, history, match }) => {
                 break;
             case 'price':
                 tempErrors.price = parseFloat(value) <= 0 ? 'Book cannot be free.' : '';
-                setPrice(price);
+                setPrice(value);
                 break;
             default:
                 break;

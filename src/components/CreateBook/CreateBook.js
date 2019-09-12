@@ -3,7 +3,7 @@ import { graphql } from 'react-apollo';
 import { compose } from 'recompose';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { createBookMutation } from './../../queries/queries';
+import { createBookMutation, getAllBooksQuery } from './../../queries/queries';
 import * as UTILS from './../../utils';
 
 const CreateBook = ({ createBookMutation, history }) => {
@@ -25,7 +25,8 @@ const CreateBook = ({ createBookMutation, history }) => {
                     title,
                     author,
                     price
-                }
+                },
+                refetchQueries: [{ query: getAllBooksQuery }]
             }).then(() => history.push('/'));
         } else {
             console.log('Invalid Form');
@@ -49,7 +50,7 @@ const CreateBook = ({ createBookMutation, history }) => {
                 break;
             case 'price':
                 tempErrors.price = parseFloat(value) <= 0 ? 'Book cannot be free.' : '';
-                setPrice(price);
+                setPrice(value);
                 break;
             default:
                 break;

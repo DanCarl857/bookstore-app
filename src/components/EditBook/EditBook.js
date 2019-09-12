@@ -24,7 +24,7 @@ const EditBook = ({ getBookQuery, editBookMutation, history, match }) => {
     const [errors, setErrors] = useState({
         title: '',
         author: '',
-        price: 0.0
+        price: ''
     });
 
     const submitForm = (event) => {

@@ -7,22 +7,28 @@ Using React create three views to list, edit and create books for the minimal bo
 your graphql server download and run the server that can be found at this repository:
 https://github.com/alacrity-law/apollo-test-app check the README for installation and execution
 instructions. The GraphQL server uses Apollo, feel free to use it on your application.
-The List View
-● The list view should display all books with all the available properties, id, title, authors
+
+`The List View`
+
+* The list view should display all books with all the available properties, id, title, authors
 and price.
-● Each record should have an edit icon that leads to the Edit View.
-● Each record should have a checkbox which when selected provides a real-time display
+* Each record should have an edit icon that leads to the Edit View.
+* Each record should have a checkbox which when selected provides a real-time display
 of how many books are selected and their total price.
-● Have a “Create New” button that will drive the user to the Create View.
-The Edit View
-● Should be a simple form to allow editing of all the book’s properties: Title, Author and
+* Have a “Create New” button that will drive the user to the Create View.
+
+`The Edit View`
+
+* Should be a simple form to allow editing of all the book’s properties: Title, Author and
 Price.
-● Should provide an Edit and Cancel button to either submit the edits or go back to the List
+* Should provide an Edit and Cancel button to either submit the edits or go back to the List
 View respectively.
-The Create View
-● Should be a simple form to allow the creation of a book. The required fields are Title,
+
+`The Create View`
+
+* Should be a simple form to allow the creation of a book. The required fields are Title,
 Author and Price.
-● Should provide a Create and Cancel button to either submit the the new book or go back
+* Should provide a Create and Cancel button to either submit the the new book or go back
 to the List View respectively.
 
 ### Features

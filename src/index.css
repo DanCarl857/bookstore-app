@@ -4,6 +4,13 @@ body {
   font-size: 13px;
 }
 
+.error {
+  font-size: 12px;
+  font-weight: 600;
+  font-style: italic;
+  color: red;
+}
+
 .box {
   margin: 70px auto;
   border: 1px solid #eee;

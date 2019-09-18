@@ -32,27 +32,31 @@ const BookList = ({ data }) => {
     }
 
     const displayBooks = () => {
-        if (data.loading) {
-            return (<>Getting books...</>);
+        if (data.books) {
+            if (data.loading) {
+                return (<>Getting books...</>);
+            } else {
+                return data.books.map(book => {
+                    return (
+                        <tr key={book.bookId}>
+                            <td className="check">
+                                <Input
+                                    onChange={e => toggleCheckbox(book)}
+                                    value={book.price}
+                                    type="checkbox"
+                                />
+                            </td>
+                            <td>{book.bookId}</td>
+                            <td>{book.title}</td>
+                            <td>{book.author}</td>
+                            <td>${book.price}</td>
+                            <td><Link to={`/edit/${book.bookId}`} params={{ bookId: book.bookId }}><i className="icon ion-md-create"></i></Link></td>
+                        </tr>
+                    )
+                })
+            }
         } else {
-            return data.books.map(book => {
-                return (
-                    <tr key={book.bookId}>
-                        <td className="check">
-                            <Input
-                                onChange={e => toggleCheckbox(book)}
-                                value={book.price}
-                                type="checkbox"
-                            />
-                        </td>
-                        <td>{book.bookId}</td>
-                        <td>{book.title}</td>
-                        <td>{book.author}</td>
-                        <td>${book.price}</td>
-                        <td><Link to={`/edit/${book.bookId}`} params={{ bookId: book.bookId }}><i className="icon ion-md-create"></i></Link></td>
-                    </tr>
-                )
-            })
+            return (<>Please make sure the server is up and running!</>);
         }
     }
 

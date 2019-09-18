@@ -24,7 +24,7 @@ const Header = () => {
           <Collapse isOpen={open} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink target="_blank" href="https://github.com/DanCarl857/bookstore-app">Documentation</NavLink>
+                <NavLink target="_blank" href="https://github.com/DanCarl857/bookstore-app/blob/master/README.md">Documentation</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink target="_blank" href="https://github.com/DanCarl857/bookstore-app">GitHub</NavLink>
